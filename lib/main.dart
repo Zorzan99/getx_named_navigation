@@ -8,6 +8,8 @@ import 'package:getrotasnomeadas/pages/home_page.dart';
 import 'package:getrotasnomeadas/pages/inicial/page1.dart';
 import 'package:getrotasnomeadas/pages/rota_nao_encontrada/rota_nao_encontrada.dart';
 
+import 'nested_navigation/home_nested_navigation.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -27,6 +29,10 @@ class MyApp extends StatelessWidget {
         page: () => const RotaNaoEncontrada(),
       ),
       initialRoute: '/home',
+      routingCallback: (Routing? rountig) {
+        debugPrint(rountig?.previous);
+        debugPrint(rountig?.current);
+      },
       getPages: [
         GetPage(
           name: '/home',
@@ -53,6 +59,10 @@ class MyApp extends StatelessWidget {
               page: () => const QueryParamPage(),
             ),
           ],
+        ),
+        GetPage(
+          name: '/nestedNavigation',
+          page: () => HomeNestedNavigation(),
         ),
       ],
     );
