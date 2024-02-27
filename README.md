@@ -1,3 +1,3 @@
 # getrotasnomeadas
 
-Navegacao de rotas nomeadas com gerenciador de estado getX.
+Navegação de rotas nomeadas com gerenciador de estado getX.
